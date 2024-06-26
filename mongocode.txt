@@ -1,0 +1,249 @@
+Users
+
+db.users.insertMany([
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8e4"),
+    name: "John Doe",
+    email: "john@example.com",
+    password: "hashedpassword123",
+    role: "student",
+    enrolled_courses: []
+  },
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8e5"),
+    name: "Jane Smith",
+    email: "jane@example.com",
+    password: "hashedpassword456",
+    role: "student",
+    enrolled_courses: []
+  },
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8e6"),
+    name: "Alice Johnson",
+    email: "alice@example.com",
+    password: "hashedpassword789",
+    role: "mentor",
+    enrolled_courses: []
+  }
+]);
+
+Codekata
+
+db.codekata.insertMany([
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8e7"),
+    user_id: ObjectId("60d5ec49f8e1e6d4c8d8b8e4"),
+    problem_title: "FizzBuzz",
+    solved: true,
+    solved_date: ISODate("2020-10-10T00:00:00Z")
+  },
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8e8"),
+    user_id: ObjectId("60d5ec49f8e1e6d4c8d8b8e5"),
+    problem_title: "Palindrome",
+    solved: false,
+    solved_date: null
+  }
+]);
+
+Attendance
+
+db.attendance.insertMany([
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8e9"),
+    user_id: ObjectId("60d5ec49f8e1e6d4c8d8b8e4"),
+    date: ISODate("2020-10-16T00:00:00Z"),
+    status: "absent"
+  },
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8ea"),
+    user_id: ObjectId("60d5ec49f8e1e6d4c8d8b8e5"),
+    date: ISODate("2020-10-16T00:00:00Z"),
+    status: "present"
+  }
+]);
+
+Topics
+
+db.topics.insertMany([
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8eb"),
+    title: "Introduction to Zen",
+    description: "Basics of Zen practice",
+    taught_date: ISODate("2020-10-05T00:00:00Z")
+  },
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8ec"),
+    title: "Advanced Zen Techniques",
+    description: "In-depth Zen practices",
+    taught_date: ISODate("2020-10-15T00:00:00Z")
+  }
+]);
+
+Tasks
+
+db.tasks.insertMany([
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8ed"),
+    title: "Zen Meditation Practice",
+    description: "Practice daily meditation",
+    assigned_date: ISODate("2020-10-01T00:00:00Z"),
+    due_date: ISODate("2020-10-31T00:00:00Z"),
+    submitted: true,
+    user_id: ObjectId("60d5ec49f8e1e6d4c8d8b8e4")
+  },
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8ee"),
+    title: "Zen Reading Assignment",
+    description: "Read Zen literature",
+    assigned_date: ISODate("2020-10-10T00:00:00Z"),
+    due_date: ISODate("2020-10-20T00:00:00Z"),
+    submitted: false,
+    user_id: ObjectId("60d5ec49f8e1e6d4c8d8b8e5")
+  }
+]);
+
+
+Company Drives
+
+db.company_drives.insertMany([
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8ef"),
+    company_name: "Tech Corp",
+    date: ISODate("2020-10-20T00:00:00Z"),
+    students_appeared: [ObjectId("60d5ec49f8e1e6d4c8d8b8e4"), ObjectId("60d5ec49f8e1e6d4c8d8b8e5")]
+  },
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8f0"),
+    company_name: "Innovate Ltd",
+    date: ISODate("2020-10-25T00:00:00Z"),
+    students_appeared: [ObjectId("60d5ec49f8e1e6d4c8d8b8e5")]
+  }
+]);
+
+Mentors
+
+db.mentors.insertMany([
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8f1"),
+    name: "Alice Johnson",
+    mentees: [ObjectId("60d5ec49f8e1e6d4c8d8b8e4"), ObjectId("60d5ec49f8e1e6d4c8d8b8e5")]
+  },
+  {
+    _id: ObjectId("60d5ec49f8e1e6d4c8d8b8f2"),
+    name: "Bob Williams",
+    mentees: [
+      ObjectId("60d5ec49f8e1e6d4c8d8b8e4"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8e5"),
+      // additional mentees to exceed 15
+      ObjectId("60d5ec49f8e1e6d4c8d8b8e3"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8e6"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8e7"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8e8"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8e9"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8ea"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8eb"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8ec"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8ed"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8ee"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8ef"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8f0"),
+      ObjectId("60d5ec49f8e1e6d4c8d8b8f1")
+    ]
+  }
+]);
+
+Queries to Test the Data
+
+1.Find all the topics and tasks which are taught in the month of October
+
+db.topics.find({
+  taught_date: {
+    $gte: ISODate("2020-10-01T00:00:00Z"),
+    $lt: ISODate("2020-11-01T00:00:00Z")
+  }
+}).pretty()
+
+db.tasks.find({
+  assigned_date: {
+    $gte: ISODate("2020-10-01T00:00:00Z"),
+    $lt: ISODate("2020-11-01T00:00:00Z")
+  }
+}).pretty()
+
+2.Find all the company drives which appeared between 15 Oct 2020 and 31 Oct 2020
+
+db.company_drives.find({
+  date: {
+    $gte: ISODate("2020-10-15T00:00:00Z"),
+    $lt: ISODate("2020-11-01T00:00:00Z")
+  }
+}).pretty()
+
+3.Find all the company drives and students who appeared for the placement
+
+db.company_drives.aggregate([
+  {
+    $lookup: {
+      from: "users",
+      localField: "students_appeared",
+      foreignField: "_id",
+      as: "students"
+    }
+  }
+]).pretty()
+
+4.Find the number of problems solved by the user in codekata
+
+db.codekata.aggregate([
+  { $match: { solved: true } },
+  { $group: { _id: "$user_id", solved_count: { $sum: 1 } } }
+]).pretty()
+
+5.Find all the mentors with mentee's count more than 15
+
+db.mentors.aggregate([
+  { $project: { name: 1, mentee_count: { $size: "$mentees" } } },
+  { $match: { mentee_count: { $gt: 15 } } }
+]).pretty()
+
+6.Find the number of users who are absent and task is not submitted between 15 Oct 2020 and 31 Oct 2020
+
+db.attendance.aggregate([
+  {
+    $match: {
+      status: "absent",
+      date: {
+        $gte: ISODate("2020-10-15T00:00:00Z"),
+        $lt: ISODate("2020-11-01T00:00:00Z")
+      }
+    }
+  },
+  {
+    $lookup: {
+      from: "tasks",
+      localField: "user_id",
+      foreignField: "user_id",
+      as: "tasks"
+    }
+  },
+  {
+    $unwind: "$tasks"
+  },
+  {
+    $match: {
+      "tasks.submitted": false,
+      "tasks.assigned_date": {
+        $gte: ISODate("2020-10-15T00:00:00Z"),
+        $lt: ISODate("2020-11-01T00:00:00Z")
+      }
+    }
+  },
+  {
+    $group: {
+      _id: "$user_id",
+      count: { $sum: 1 }
+    }
+  }
+]).pretty()
+
